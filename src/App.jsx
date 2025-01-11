@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import OnboardingScreen from './pages/Layouts/onboarding-layout/OnboardingScreen';
 import Home from './pages/Layouts/onboarding-layout/Home';
+import SignIn from './pages/Layouts/authentication-layout/SignIn';
 
 const App = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
@@ -30,6 +31,7 @@ const App = () => {
     <Routes>
       <Route path="/" element={<OnboardingScreen />} />
       <Route path="/home" element={<Home />} />
+      <Route path='/sign-in' element={<SignIn/> } />
     </Routes>
   </Router>
   );

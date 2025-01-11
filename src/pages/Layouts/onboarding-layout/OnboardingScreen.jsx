@@ -37,7 +37,7 @@ const navigate = useNavigate()
 useEffect(()=> {
     const timer = setTimeout(()=> {
         setShowSplash(false);
-    }, 4000);
+    }, 3000);
 
     return () => clearTimeout(timer);
 }, []);
@@ -51,7 +51,7 @@ const handleContinue = () => {
         setCurrentScreen(currentScreen + 1)
     }
     else{
-        navigate('/Home')
+        navigate('/sign-in')
     }
 };
 if (showSplash){
