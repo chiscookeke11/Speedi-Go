@@ -28,7 +28,7 @@ const screens = [
 ]
 
 
-const OnboardingScreen = () => {
+const OnboardingScreen = ({darkMode, lightMode}) => {
 
 const [currentScreen, setCurrentScreen] = useState(0);
 const [showSplash, setShowSplash] = useState(true);
@@ -55,9 +55,17 @@ const handleContinue = () => {
     }
 };
 if (showSplash){
-    return <SplashScreen/>
+    return <SplashScreen darkMode={darkMode} />
 }
-
+const showFirstScreen = () => {
+    setCurrentScreen(screens.length - 3)
+}
+const showSecondScreen = () => {
+    setCurrentScreen(screens.length - 2)
+}
+const showThirdScreen = () => {
+    setCurrentScreen(screens.length - 1)
+}
 
 
 
@@ -75,6 +83,14 @@ if (showSplash){
         onSkip={handleSkip}
         onContinue={handleContinue}
         visibilityClass= { currentScreen === screens.length -1 ? "hidden" : "block" } 
+        darkMode={darkMode}
+        firstScreen = {currentScreen === screens.length - 3  }
+        secondScreen = {currentScreen === screens.length - 2 }
+        thirdScreen = {currentScreen === screens.length - 1  }
+        lightMode = {lightMode}
+        showFirstScreen = {showFirstScreen}
+        showSecondScreen ={showSecondScreen}
+        showThirdScreen={showThirdScreen}
         />
     </div>
   )
