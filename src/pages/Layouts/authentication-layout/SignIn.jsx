@@ -1,7 +1,18 @@
-import React from 'react'
-import { FaEye } from 'react-icons/fa'
+import React, { useState } from 'react'
+import { FaEye, FaEyeSlash } from 'react-icons/fa'
 
 const SignIn = () => {
+
+  
+
+  const [showPassword, setShowPassword] = useState(false)
+  
+
+
+  const togglePasswordVisibility = () => {
+    setShowPassword((prevShowPaswword) => !prevShowPaswword)
+  }
+
   return (
     <div className='w-full h-screen flex flex-col items-center justify-center px-4 py-4 gap-5 text-center ' >
 
@@ -20,8 +31,8 @@ const SignIn = () => {
 
         <label htmlFor="password" className='flex flex-col gap-3 w-full items-start justify-start text-[#21252C] text-base font-medium mb-4  ' >
         Password
-          <div className=' w-full rounded-lg border border-[#CFD5DB] flex items-center justify-start overflow-hidden ' ><input type="password" id='pasword' name='password' className=' flex-grow p-4 border-none placeholder-[#BABFC5]  outline-none text-[#21252C] text-base font-medium ' placeholder='Enter password' />
-          <button type='button' className='w-12 h-12 flex items-center justify-center ' ><FaEye/>  </button>
+          <div className=' w-full rounded-lg border border-[#CFD5DB] flex items-center justify-start overflow-hidden ' ><input type={showPassword? "text" : "password"} id='pasword' name='password' className=' flex-grow p-4 border-none placeholder-[#BABFC5]  outline-none text-[#21252C] text-base font-medium ' placeholder='Enter password' />
+          <button type='button' className='w-12 h-12 flex items-center justify-center cursor-pointer ' onClick={togglePasswordVisibility} > {showPassword?  <FaEyeSlash/> : <FaEye/>} </button> 
           </div>
         </label>
 
