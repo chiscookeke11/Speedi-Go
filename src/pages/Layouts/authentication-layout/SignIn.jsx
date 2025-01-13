@@ -1,7 +1,10 @@
 import React, { useState } from 'react'
-import { FaEye, FaEyeSlash } from 'react-icons/fa'
+import { FaApple, FaAppleAlt, FaEye, FaEyeSlash } from 'react-icons/fa'
+import { useNavigate } from 'react-router-dom'
 
 const SignIn = ({ darkMode }) => {
+
+ const navigate = useNavigate()
   
 
   const ValidEmail = "chiscookeke11@gmail.com"
@@ -75,7 +78,7 @@ const SignIn = ({ darkMode }) => {
 
 
       {/* form */}
-      <form onSubmit={handleSubmit} action="" className=' w-full py-1  '>
+      <form onSubmit={handleSubmit}  className=' w-full py-1  '>
 
      
         
@@ -113,7 +116,7 @@ const SignIn = ({ darkMode }) => {
         </label>
 
 
-        <p className={`w-fit  justify-self-end text-sm font-medium  ${darkMode ? "text-[#EFF1F4] " : "text-[#21252C] "} `} >Forgot password?</p>
+        <p className={`w-fit  justify-self-end text-sm font-medium cursor-pointer  ${darkMode ? "text-[#EFF1F4] " : "text-[#21252C] "} `} onClick={() => navigate('/forgot-password')}  >Forgot password?</p>
 
 
         <button type='submit' className={`w-full  p-4  text-base font-semibold rounded-[8px] my-4 ${darkMode ? "text-[#21252C] bg-[#D7E0EE] " : "text-[#FFFFFF] bg-[#21252C]"} `} >Sign In</button>
@@ -139,7 +142,7 @@ const SignIn = ({ darkMode }) => {
 
       <div className='w-full flex flex-row items-center justify-evenly gap-5' >
         <button className={`w-1/2 whitespace-nowrap flex items-center justify-center flex-row  p-4 rounded-2xl gap-3  ${darkMode ? "bg-[#2B303A] text-[#EFF1F4] " : "border-[#CFD5DB] border"} `} > <img src="https://res.cloudinary.com/dwedz2laa/image/upload/v1736695565/Google_ky0mgu.svg" alt="google logo" /> Google</button>
-        <button className={`w-1/2 whitespace-nowrap flex items-center justify-center flex-row  p-4 rounded-2xl gap-3  ${darkMode ? "bg-[#2B303A] text-[#EFF1F4]" : "border-[#CFD5DB] border"} `} > <img src="https://res.cloudinary.com/dwedz2laa/image/upload/v1736695569/Vector_yfcxgd.svg" alt="apple logo" /> Apple</button>
+        <button className={`w-1/2 whitespace-nowrap flex items-center justify-center flex-row  p-4 rounded-2xl gap-3  ${darkMode ? "bg-[#2B303A] text-[#EFF1F4]" : "border-[#CFD5DB] border"} `} > {darkMode? <FaApple className='text-xl ' />    : <img src="https://res.cloudinary.com/dwedz2laa/image/upload/v1736695569/Vector_yfcxgd.svg" alt="apple logo" /> }  Apple</button>
       </div>
 
     </div>
