@@ -4,6 +4,7 @@ import OnboardingScreen from './pages/Layouts/onboarding-layout/OnboardingScreen
 import SignIn from './pages/Layouts/authentication-layout/SignIn';
 import Home from './pages/Layouts/AppLayout/Home';
 import ForgotPassword from './pages/Layouts/authentication-layout/ForgotPassword';
+import OtpPage from './pages/Layouts/authentication-layout/OtpPage';
 
 const App = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
@@ -40,6 +41,7 @@ const App = () => {
       <Route path="/home" element={ <Home darkMode={darkMode}/>} />
       <Route path='/sign-in' element={<SignIn darkMode={darkMode}/> } />
       <Route path='/forgot-password' element={<ForgotPassword darkMode={darkMode} /> } />
+      <Route path='/otp-page' element={<OtpPage/> }/>
     </Routes>
   </Router>
   );

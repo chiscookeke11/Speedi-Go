@@ -4,8 +4,8 @@ import { useNavigate } from 'react-router-dom'
 
 const SignIn = ({ darkMode }) => {
 
- const navigate = useNavigate()
-  
+  const navigate = useNavigate()
+
 
   const ValidEmail = "chiscookeke11@gmail.com"
   const ValidPassword = "testing"
@@ -15,7 +15,7 @@ const SignIn = ({ darkMode }) => {
     password: "",
   })
 
-  const [errorMessageEmail, setErrorMessageEmail] = useState( "")
+  const [errorMessageEmail, setErrorMessageEmail] = useState("")
   const [formErrorMessage, setFormErrorMessage] = useState("")
 
 
@@ -28,12 +28,12 @@ const SignIn = ({ darkMode }) => {
 
     setFormData((prevState) => ({
       ...prevState,
-      [name]:value,
+      [name]: value,
     }))
-    if (name === "email" && !validateEmail(value)){
+    if (name === "email" && !validateEmail(value)) {
       setErrorMessageEmail("Please enter a valid email address")
     }
-    else{
+    else {
       setErrorMessageEmail("")
     }
 
@@ -54,20 +54,20 @@ const SignIn = ({ darkMode }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    if (formData.email !== ValidEmail && formData.password === ValidPassword ){
+    if (formData.email !== ValidEmail && formData.password === ValidPassword) {
       setFormErrorMessage("Invalid Email")
     }
-    else if(formData.email === ValidEmail && formData.password !== ValidPassword  ){
+    else if (formData.email === ValidEmail && formData.password !== ValidPassword) {
       setFormErrorMessage("Invalid Password")
     }
-    else if (formData.email !== ValidEmail && formData.password !== ValidPassword ){
+    else if (formData.email !== ValidEmail && formData.password !== ValidPassword) {
       setFormErrorMessage("Invalid Login Credentials")
     }
-    else{
+    else {
       setFormErrorMessage("form submitted")
     }
   }
-  
+
 
   return (
     <div className={`w-full min-h-screen flex flex-col items-center justify-center px-4 py-4 gap-5 text-center  ${darkMode ? " bg-[#141924] " : "bg-white"} sign-in `} >
@@ -78,20 +78,20 @@ const SignIn = ({ darkMode }) => {
 
 
       {/* form */}
-      <form onSubmit={handleSubmit}  className=' w-full py-1  '>
+      <form onSubmit={handleSubmit} className=' w-full py-1  '>
 
-     
-        
+
+
         <label htmlFor="email" className={`flex flex-col gap-3 w-full items-start justify-start  text-base font-medium my-5 ${darkMode ? "text-[#eff1f4] " : "text-[#21252C]"} `} >
           Email Address
           <input
-          onChange={handleChange}
-           type="email" 
-           id='email' 
-           name='email' 
-           className={`w-full p-4 rounded-lg  outline-none  text-base font-medium  ${darkMode ? "bg-[#2B303A] focus:border border-[#6D7688] placeholder-[#6D7688] text-[#EFF1F4] " : "bg-white border border-[#CFD5DB] placeholder-[#BABFC5] text-[#21252C]"} `} 
-           placeholder='Enter email address'
-            required 
+            onChange={handleChange}
+            type="email"
+            id='email'
+            name='email'
+            className={`w-full p-4 rounded-lg  outline-none  text-base font-medium  ${darkMode ? "bg-[#2B303A] focus:border border-[#6D7688] placeholder-[#6D7688] text-[#EFF1F4] " : "bg-white border border-[#CFD5DB] placeholder-[#BABFC5] text-[#21252C]"} `}
+            placeholder='Enter email address'
+            required
             value={formData.email} />
 
 
@@ -102,13 +102,13 @@ const SignIn = ({ darkMode }) => {
         <label htmlFor="password" className={`flex flex-col gap-3 w-full items-start justify-start text-[#21252C] text-base font-medium mb-4 ${darkMode ? "text-[#eff1f4]  " : "text-[#21252C]"}  `} >
           Password
           <div className={`w-full rounded-lg border border-[#CFD5DB] flex items-center justify-start overflow-hidden     ${darkMode ? "bg-[#2B303A]" : "bg-white"}`} >
-            <input 
-            onChange={handleChange}
-            type={showPassword ? "text" : "password"}
-             id='pasword'
-              name='password' 
-              className={` flex-grow p-4 border-none   outline-none text-base font-medium ${darkMode ? "placeholder-[#6D7688] text-[#EFF1F4] bg-[#2B303A] focus:border border-[#6D7688] " : " text-[#21252C] placeholder-[#BABFC5] bg-white"} `} 
-              placeholder='Enter password' 
+            <input
+              onChange={handleChange}
+              type={showPassword ? "text" : "password"}
+              id='pasword'
+              name='password'
+              className={` flex-grow p-4 border-none   outline-none text-base font-medium ${darkMode ? "placeholder-[#6D7688] text-[#EFF1F4] bg-[#2B303A] focus:border border-[#6D7688] " : " text-[#21252C] placeholder-[#BABFC5] bg-white"} `}
+              placeholder='Enter password'
               required
               value={formData.password} />
             <button type='button' className={`w-12 h-12 flex items-center justify-center cursor-pointer ${darkMode ? "text-[#BABFC5]" : "text-[#BABFC5] "}`} onClick={togglePasswordVisibility} > {showPassword ? <FaEyeSlash /> : <FaEye />} </button>
@@ -142,7 +142,7 @@ const SignIn = ({ darkMode }) => {
 
       <div className='w-full flex flex-row items-center justify-evenly gap-5' >
         <button className={`w-1/2 whitespace-nowrap flex items-center justify-center flex-row  p-4 rounded-2xl gap-3  ${darkMode ? "bg-[#2B303A] text-[#EFF1F4] " : "border-[#CFD5DB] border"} `} > <img src="https://res.cloudinary.com/dwedz2laa/image/upload/v1736695565/Google_ky0mgu.svg" alt="google logo" /> Google</button>
-        <button className={`w-1/2 whitespace-nowrap flex items-center justify-center flex-row  p-4 rounded-2xl gap-3  ${darkMode ? "bg-[#2B303A] text-[#EFF1F4]" : "border-[#CFD5DB] border"} `} > {darkMode? <FaApple className='text-xl ' />    : <img src="https://res.cloudinary.com/dwedz2laa/image/upload/v1736695569/Vector_yfcxgd.svg" alt="apple logo" /> }  Apple</button>
+        <button className={`w-1/2 whitespace-nowrap flex items-center justify-center flex-row  p-4 rounded-2xl gap-3  ${darkMode ? "bg-[#2B303A] text-[#EFF1F4]" : "border-[#CFD5DB] border"} `} > {darkMode ? <FaApple className='text-xl ' /> : <img src="https://res.cloudinary.com/dwedz2laa/image/upload/v1736695569/Vector_yfcxgd.svg" alt="apple logo" />}  Apple</button>
       </div>
 
     </div>

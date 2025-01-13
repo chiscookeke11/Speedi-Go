@@ -1,6 +1,10 @@
 import React, { useState } from 'react'
+import {  useNavigate } from 'react-router-dom';
 
 const ForgotPassword = ({darkMode}) => {
+
+
+  const navigate = useNavigate()
 
  const ValidEmail = "chiscookeke11@gmail.com";
 
@@ -22,11 +26,22 @@ const ForgotPassword = ({darkMode}) => {
     if (!validateEmail(value)){
       setErrorMessageEmail("Please enter a valid email address")
     }
-    else{
+    else {
       setErrorMessageEmail("")
     }
   }
 
+  const handleResetSubmit = (e) => {
+    e.preventDefault()
+    if( resetEmail === validEmail ){
+      e.target.reset()
+      setResetEmail("");
+      navigate('/otp-page')
+    }
+    else{
+      alert("Email not found")
+    }
+  }
 
 
 
@@ -40,7 +55,7 @@ const ForgotPassword = ({darkMode}) => {
         <h1 className={` text-2xl font-semibold  ${darkMode ? "text-[#EFF1F4] " : "text-[#21252C]"} `}  >Forgot Password?</h1>
         <p className={`max-w-[276px] text-sm font-normal ${darkMode ? "text-[#8A9199] " : "text-[#76889A] "} `}>Enter your email address, and we will send an OTP</p>
 
-        <form action=""  className=' w-full py-1  ' >
+        <form action="" onSubmit={handleResetSubmit}  className=' w-full py-1  ' >
             <label htmlFor="email" className={`flex flex-col gap-3 w-full items-start justify-start  text-base font-medium my-5 ${darkMode ? "text-[#eff1f4] " : "text-[#21252C]"} `} >
                 Email Address
                 <input type="text"
@@ -53,7 +68,7 @@ const ForgotPassword = ({darkMode}) => {
                   <p className='text-[#F33D3D] text-sm font-normal '>{errorMessageEmail}</p>
                  </label>
             <button className={`w-full  p-4  text-base font-semibold rounded-[8px] my-4 ${darkMode ? "text-[#21252C] bg-[#D7E0EE] " : "text-[#FFFFFF] bg-[#21252C]"} `} >Continue</button>
-            <p className={` text-sm font-normal mt-6 ${darkMode ? "text-[#8A9199] " : "text-[#76889A] "} `} >Remembered password? Sign in</p>
+            <p  className={` text-sm font-normal mt-6 ${darkMode ? "text-[#8A9199] " : "text-[#76889A] "} `} >Remembered password? <a href="#" onClick={() => navigate('/sign-in')} className={` ${darkMode ? "text-white" : " text-[#21252C]"} `} > Sign in</a></p>
         </form>
         
         
