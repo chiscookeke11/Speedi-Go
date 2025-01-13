@@ -41,7 +41,7 @@ const App = () => {
       <Route path="/home" element={ <Home darkMode={darkMode}/>} />
       <Route path='/sign-in' element={<SignIn darkMode={darkMode}/> } />
       <Route path='/forgot-password' element={<ForgotPassword darkMode={darkMode} /> } />
-      <Route path='/otp-page' element={<OtpPage/> }/>
+      <Route path='/otp-page' element={<OtpPage darkMode={darkMode} /> }/>
     </Routes>
   </Router>
   );
