@@ -5,11 +5,12 @@ import SignIn from './pages/Layouts/authentication-layout/SignIn';
 import Home from './pages/Layouts/AppLayout/Home';
 import ForgotPassword from './pages/Layouts/authentication-layout/ForgotPassword';
 import OtpPage from './pages/Layouts/authentication-layout/OtpPage';
+import ChangePassword from './pages/Layouts/authentication-layout/ChangePassword';
 
 const App = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
-  const[darkMode, setDarkMode] = useState(true)
+  const[darkMode, setDarkMode] = useState(false)
 
   const lightMode = () => {
     return darkMode !== true
@@ -42,6 +43,7 @@ const App = () => {
       <Route path='/sign-in' element={<SignIn darkMode={darkMode}/> } />
       <Route path='/forgot-password' element={<ForgotPassword darkMode={darkMode} /> } />
       <Route path='/otp-page' element={<OtpPage darkMode={darkMode} /> }/>
+      <Route path='/change-password' element={<ChangePassword darkMode={darkMode} />} />
     </Routes>
   </Router>
   );

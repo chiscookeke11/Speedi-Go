@@ -65,6 +65,7 @@ const SignIn = ({ darkMode }) => {
     }
     else {
       setFormErrorMessage("form submitted")
+      navigate("/home")
     }
   }
 

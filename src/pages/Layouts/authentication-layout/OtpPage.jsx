@@ -1,9 +1,11 @@
 import React, { useRef, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const OtpPage = ({ darkMode }) => {
   const [otp, setOtp] = useState(new Array(4).fill(""));
   const [resetErrorMessage, setResetErrorMessage] = useState("");
   const [errorBox, setErrorBox] = useState(false);
+  const navigate = useNavigate()
 
   const validOtp = 1234;
 
@@ -47,12 +49,14 @@ const OtpPage = ({ darkMode }) => {
     if (enteredOtp.length < otp.length) {
       setResetErrorMessage("Please input complete digits");
       setErrorBox(true);
-    } else if (enteredOtp === validOtp.toString()) {
-      alert("Email will be sent soon");
+    }
+     else if (enteredOtp === validOtp.toString()) {
       setOtp(new Array(4).fill(""));
       setResetErrorMessage("");
       setErrorBox(false);
-    } else {
+      navigate("/change-password")
+    }
+     else {
       setResetErrorMessage("Check your code and retry");
       setErrorBox(true);
     }
@@ -135,7 +139,7 @@ const OtpPage = ({ darkMode }) => {
             }`}
           >
             Remembered password?{" "}
-            <a href="#" className={`${darkMode ? "text-white" : "text-[#21252C]"}`}>
+            <a  onClick={()=> navigate("/sign-in")}  href="#" className={`${darkMode ? "text-white" : "text-[#21252C]"}`}>
               Sign in
             </a>
           </p>
