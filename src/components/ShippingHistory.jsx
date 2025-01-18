@@ -3,7 +3,7 @@ import { shippingDetails } from '../assets/assets'
 
 const ShippingHistory = () => {
   return (
-    <div className='my-8 border-t border-[#F1F2F6] px-6 py-4 ' >
+    <div className='my-8 border-t border-[#F1F2F6] px-6 py-4 h-auto ' >
 
 
 
@@ -11,13 +11,13 @@ const ShippingHistory = () => {
 
     const bg = () => {
         if(detail.status === "Delivered"){
-            return "bg-[#E9FFE5]";
+            return "bg-[#E9FFE5] text-[#29BE10]";
         }
         else if (detail.status === "Cancelled"){
-            return "bg-[#FFF8E1]";
+            return "bg-[#FFF8E1] text-[#FF8A00]";
         }
         {
-            return "bg-[#FFF1F1]"
+            return "bg-[#FFF1F1] text-[#F33D3D]"
         }
     }
     const deliveryImg = () => {
@@ -32,7 +32,7 @@ const ShippingHistory = () => {
         }
     }
 return     (
-        <div className='w-full flex items-start gap-2  my-5 ' >
+        <div className='w-full flex items-start gap-2  my-5  ' >
             <span className={`flex items-center justify-center w-[40px] h-[40px] rounded-[10px]   ${bg()} `} >
                 <img src={deliveryImg()} alt="delivery-status" />
                 </span>
@@ -79,7 +79,7 @@ return     (
 
                   <div className="status flex items-center gap-10 mt-3 ">
                   <h2 className='text-[#76889A] font-normal text-sm '>Status:</h2>
-                  <span className={`px-8 py-4 rounded-2xl bg-[#E9FFE5] text-[#29BE10] text-xs font-normal block  ${bg()} `} >{detail.status} </span>
+                  <span className={`px-8 py-4 rounded-2xl bg-[#E9FFE5]  text-xs font-normal block  ${bg()} `} >{detail.status} </span>
 
                   </div>
 

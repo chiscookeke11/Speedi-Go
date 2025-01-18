@@ -5,24 +5,12 @@ import { MdFilterList } from 'react-icons/md';
 import ShippingHistory from '../../../components/ShippingHistory';
 
 const Home = () => {
-  const [loading, setLoading] = useState(false);
+  
   const [newMessage, setNewMessage] = useState(["hello", "hello", "hello"]);
 
-  useEffect(() => {
-    setLoading(true);
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 3000);
-
-    return () => clearTimeout(timer);
-  }, []);
-
-  if (loading) {
-    return <SplashScreen />;
-  } else {
     return (
-      <div className="w-full min-h-screen bg-[#21252C]">
-        <div className="flex flex-col gap-8 py-10 px-7 mt-2">
+      <div className="w-full min-h-screen bg-[#21252C]  ">
+        <div className="flex flex-col gap-8 py-10 px-7 ">
           <span className="w-full flex flex-row items-center justify-between">
             <img
               src="https://res.cloudinary.com/dwedz2laa/image/upload/v1736589441/Logo_srltbt.svg"
@@ -31,7 +19,7 @@ const Home = () => {
             />
             <span>
               <img
-                src={newMessage.length > 0 ? icons.notificationBell : icons.notificationBell}
+                src="https://res.cloudinary.com/dwedz2laa/image/upload/v1737113146/notifications_vffj72.svg"
                 alt="notification bell"
               />
             </span>
@@ -56,12 +44,12 @@ const Home = () => {
 
 
 
-        <div className="container bg-white w-full flex flex-col  ">
+        <div className="container bg-white w-full flex flex-col mb-11  ">
           <div className="services mt-4 pt-3 py-2 ">
             <h1 className='px-6 text-[#21252C] text-lg font-bold ' >Our Services</h1>
 
 
-            <div className='w-full flex flex-row items-center overflow-x-auto mt-8 px-6 gap-8 ' >
+            <div className='w-full flex flex-row items-center overflow-x-auto mt-8 px-6 gap-8 py-3 ' >
 
               {services.map((service, index) => (
                 <button className='flex items-center justify-center flex-col gap-3  border-none outline-none ' >
@@ -102,6 +90,6 @@ const Home = () => {
       </div>
     );
   }
-};
+;
 
 export default Home;

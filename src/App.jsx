@@ -6,15 +6,14 @@ import Home from './pages/Layouts/AppLayout/Home';
 import ForgotPassword from './pages/Layouts/authentication-layout/ForgotPassword';
 import OtpPage from './pages/Layouts/authentication-layout/OtpPage';
 import ChangePassword from './pages/Layouts/authentication-layout/ChangePassword';
+import HomeLayout from './pages/Layouts/AppLayout/HomeLayout';
+import Track from './pages/Layouts/AppLayout/Track';
 
 const App = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  const [darkMode, setDarkMode] = useState(false);
 
-  const[darkMode, setDarkMode] = useState(false)
-
-  const lightMode = () => {
-    return darkMode !== true
- }
+  const lightMode = () => !darkMode;
 
   useEffect(() => {
     const handleResize = () => {
@@ -36,16 +35,28 @@ const App = () => {
     );
   }
 
-  return (<Router>
-    <Routes>
-      <Route path="/" element={<OnboardingScreen darkMode={darkMode} lightMode={lightMode()} />} />
-      <Route path="/home" element={ <Home darkMode={darkMode}/>} />
-      <Route path='/sign-in' element={<SignIn darkMode={darkMode}/> } />
-      <Route path='/forgot-password' element={<ForgotPassword darkMode={darkMode} /> } />
-      <Route path='/otp-page' element={<OtpPage darkMode={darkMode} /> }/>
-      <Route path='/change-password' element={<ChangePassword darkMode={darkMode} />} />
-    </Routes>
-  </Router>
+  return (
+    <Router>
+      <Routes>
+        {/* Main Onboarding Route */}
+        <Route
+          path="/"
+          element={<OnboardingScreen darkMode={darkMode} lightMode={lightMode()} />}
+        />
+
+        {/* Home Layout with Nested Routes */}
+        <Route path="/home-layout" element={<HomeLayout darkMode={darkMode} />}>
+          <Route  index element={<Home darkMode={darkMode} />} />
+          <Route path='track' element={<Track/>} />
+        </Route>
+
+        {/* Authentication Routes */}
+        <Route path="/sign-in" element={<SignIn darkMode={darkMode} />} />
+        <Route path="/forgot-password" element={<ForgotPassword darkMode={darkMode} />} />
+        <Route path="/otp-page" element={<OtpPage darkMode={darkMode} />} />
+        <Route path="/change-password" element={<ChangePassword darkMode={darkMode} />} />
+      </Routes>
+    </Router>
   );
 };
 
