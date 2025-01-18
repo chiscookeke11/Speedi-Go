@@ -52,7 +52,7 @@ const Track = () => {
 
 
 
-    <div className="container bg-white w-full flex flex-col mb-11  py-3  ">
+    <div className="container bg-white w-full flex flex-col mb-11 py-3 min-h-[150vh]  ">
       <h1 className='text-[#21252C] text-lg font-bold px-5 ' >Parcel Tracking</h1>
 
       <div className='w-full flex flex-row items-center justify-between my-3 border-t border-b border-[#F1F2F6] py-4 px-5 ' >
@@ -63,25 +63,25 @@ const Track = () => {
 
       <div className='w-full flex items-center justify-between px-6 py-4 gap-3  ' >  
          <div className='w-1/2' >
-          <h2 className='text-[#BABFC5] font-normal text-sm ' >From</h2>
+          <h2 className='text-[#BABFC5] font-normal text-sm mb-2 ' >From</h2>
           <p className='text-[#76889A] font-normal text-sm ' >1234 Elm Street Springfield, IL 62701</p>
          </div>
 
 
          <div className='w-1/2'>
-          <h2 className='text-[#BABFC5] font-normal text-sm '>To</h2>
+          <h2 className='text-[#BABFC5] font-normal text-sm mb-2 '>To</h2>
           <p  className='text-[#76889A] font-normal text-sm '>5678 Maple Avenue Seattle, WA 98101</p>
          </div>
       </div>
 
-      <div>
-        <p>Recipient:</p>
-        <p>Jonathan Anderson</p>
+      <div className='w-full flex items-center justify-between px-6 py-3 ' >
+        <p  className='text-[#BABFC5] font-normal text-sm '>Recipient:</p>
+        <p className='text-[#76889A] font-normal text-sm '>Jonathan Anderson</p>
       </div>
 
-      <div>
-        <p>Est. Delivery:</p>
-        <p>20 Sept 2023</p>
+      <div className='w-full flex items-center justify-between px-6 py-3 '>
+        <p className='text-[#BABFC5] font-normal text-sm '>Est. Delivery:</p>
+        <p className='text-[#76889A] font-normal text-sm '>20 Sept 2023</p>
       </div>
 
       
