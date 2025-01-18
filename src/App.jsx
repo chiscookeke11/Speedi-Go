@@ -8,6 +8,7 @@ import OtpPage from './pages/Layouts/authentication-layout/OtpPage';
 import ChangePassword from './pages/Layouts/authentication-layout/ChangePassword';
 import HomeLayout from './pages/Layouts/AppLayout/HomeLayout';
 import Track from './pages/Layouts/AppLayout/Track';
+import QRcodePage from './pages/Layouts/AppLayout/QRcodePage';
 
 const App = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
@@ -55,6 +56,11 @@ const App = () => {
         <Route path="/forgot-password" element={<ForgotPassword darkMode={darkMode} />} />
         <Route path="/otp-page" element={<OtpPage darkMode={darkMode} />} />
         <Route path="/change-password" element={<ChangePassword darkMode={darkMode} />} />
+   
+
+
+{/* Auxillary pages */}
+        <Route path="/Qrcode" element={<QRcodePage darkMode={darkMode}/> } />
       </Routes>
     </Router>
   );
