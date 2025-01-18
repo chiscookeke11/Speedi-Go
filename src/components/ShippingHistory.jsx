@@ -3,7 +3,7 @@ import { shippingDetails } from '../assets/assets'
 
 const ShippingHistory = () => {
   return (
-    <div className='my-8 border-t border-[#F1F2F6] px-6 py-4 h-auto ' >
+    <div className='my-1 border-t border-[#F1F2F6]  py-4 h-auto ' >
 
 
 
@@ -32,7 +32,7 @@ const ShippingHistory = () => {
         }
     }
 return     (
-        <div className='w-full flex items-start gap-2  my-5  ' >
+        <div className='w-full flex items-start gap-2  my-6 border-b border-[#F1F2F6] py-3  px-6 ' >
             <span className={`flex items-center justify-center w-[40px] h-[40px] rounded-[10px]   ${bg()} `} >
                 <img src={deliveryImg()} alt="delivery-status" />
                 </span>

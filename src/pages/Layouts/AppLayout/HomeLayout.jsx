@@ -28,15 +28,15 @@ const HomeLayout = () => {
     
     
     
-          <nav className='w-full px-3 py-6 bg-[#21252C] fixed bottom-0 left-0 flex flex-row items-center justify-evenly gap-3 text-[#76889A]  text-sm font-normal   ' >
+          <nav className='w-full px-5 py-6 bg-[#21252C] fixed bottom-0 left-0 flex flex-row items-center justify-between gap-3 text-[#76889A]  text-sm font-normal   ' >
     
-            <NavLink to="/home-layout" > <button className=' flex items-center gap-1 justify-center flex-col border-none outline-none text-center ' >
+            <NavLink to="/home-layout"  end className={({isActive}) => isActive? "text-white" : "" }  > <button className=' flex items-center gap-1 justify-center flex-col border-none outline-none text-center ' >
                 <FaHome/>
                 Home
             </button>
             </NavLink>
     
-           <NavLink to="/home-layout/track"  > <button className=' flex gap-1 items-center justify-center flex-col border-none outline-none text-center'>
+           <NavLink to="/home-layout/track" className={({isActive}) => isActive? "text-white" : "" }   > <button className=' flex gap-1 items-center justify-center flex-col border-none outline-none text-center'>
                 <FaMapMarkedAlt />
                 Track
             </button>

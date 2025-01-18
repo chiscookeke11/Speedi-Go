@@ -64,7 +64,6 @@ const SignIn = ({ darkMode }) => {
       setFormErrorMessage("Invalid Login Credentials")
     }
     else {
-      setFormErrorMessage("form submitted")
       navigate("/home-layout")
     }
   }
