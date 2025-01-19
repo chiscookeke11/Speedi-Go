@@ -1,9 +1,13 @@
 import React from 'react'
 import { FaCopy } from 'react-icons/fa'
-import { steps } from '../../../assets/assets'
+import { shippingDetails, steps } from '../../../assets/assets'
 
 const Track = () => {
 
+  const currentId = shippingDetails.trackingId
+
+
+  console.log(currentId)
   
 
 
