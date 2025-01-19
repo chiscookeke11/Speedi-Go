@@ -44,5 +44,39 @@ export const icons = [{
       to: "5678 Maple Avenue Seattle, WA 98101",
       status: "Failed"
     }
-  ]
+  ];
+
+  export const steps = [
+    {
+      date: "20 Sept",
+      status: "Successfully Delivered",
+      description: "Your parcel was delivered successfully by the delivery man",
+      completed: false,
+    },
+    {
+      date: "19 Sept",
+      status: "In-Transit",
+      description: "The package is now in transit. You will receive the parcel shortly.",
+      completed: true,
+    },
+    {
+      date: "18 Sept",
+      status: "Pickup Confirmation",
+      description: "Our delivery man picked up the parcel from us.",
+      completed: true,
+    },
+    {
+      date: "17 Sept",
+      status: "Parcel Preparation",
+      description: "Your parcel has been prepared and ready for pickup.",
+      completed: true,
+    },
+    {
+      date: "17 Sept",
+      status: "Parcel Received",
+      description: "Your parcel has been received and is in the process of preparing.",
+      completed: true,
+    },
+  ];
+  
   

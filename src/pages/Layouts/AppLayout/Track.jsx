@@ -1,5 +1,6 @@
 import React from 'react'
 import { FaCopy } from 'react-icons/fa'
+import { steps } from '../../../assets/assets'
 
 const Track = () => {
 
@@ -52,7 +53,7 @@ const Track = () => {
 
 
 
-    <div className="container bg-white w-full flex flex-col mb-11 py-3 min-h-[150vh]  ">
+    <div className="container bg-white w-full flex flex-col mb-11 py-3 pb-10  ">
       <h1 className='text-[#21252C] text-lg font-bold px-5 ' >Parcel Tracking</h1>
 
       <div className='w-full flex flex-row items-center justify-between my-3 border-t border-b border-[#F1F2F6] py-4 px-5 ' >
@@ -61,7 +62,7 @@ const Track = () => {
       </div>
 
 
-      <div className='w-full flex items-center justify-between px-6 py-4 gap-3  ' >  
+      <div className='w-full flex items-center justify-between px-6 py-4 gap-3  border-t border-b border-[#F1F2F6]  ' >  
          <div className='w-1/2' >
           <h2 className='text-[#BABFC5] font-normal text-sm mb-2 ' >From</h2>
           <p className='text-[#76889A] font-normal text-sm ' >1234 Elm Street Springfield, IL 62701</p>
@@ -74,14 +75,53 @@ const Track = () => {
          </div>
       </div>
 
-      <div className='w-full flex items-center justify-between px-6 py-3 ' >
+      <div className='w-full flex items-center justify-between px-6 py-3 border-t border-b border-[#F1F2F6] ' >
         <p  className='text-[#BABFC5] font-normal text-sm '>Recipient:</p>
         <p className='text-[#76889A] font-normal text-sm '>Jonathan Anderson</p>
       </div>
 
-      <div className='w-full flex items-center justify-between px-6 py-3 '>
+      <div className='w-full flex items-center justify-between px-6 py-3 border-t border-b border-[#F1F2F6] '>
         <p className='text-[#BABFC5] font-normal text-sm '>Est. Delivery:</p>
         <p className='text-[#76889A] font-normal text-sm '>20 Sept 2023</p>
+      </div>
+
+
+
+
+
+
+      <div className='w-full px-6 py-8 ' >
+      <div className="flex flex-col p-4 gap-8">
+  {steps.map((step, index) => (
+    <div className="flex items-start" key={index}>
+      <div className="flex flex-col items-center mr-4">
+        <div
+          className={`w-6 h-6 flex items-center justify-center border-2 rounded-full ${
+            step.completed ? "border-green-500 bg-green-500 text-white" : "border-gray-300 bg-white"
+          }`}
+        >
+          ✓
+        </div>
+        {index !== steps.length - 1 && (
+          <div className="w-[2px] h-8 bg-gray-300"></div>
+        )}
+      </div>
+      <div className="flex-1">
+        <p className="text-sm text-gray-500">{step.date}</p>
+        <p
+          className={`text-base font-semibold ${
+            step.completed ? "text-green-500" : "text-gray-800"
+          }`}
+        >
+          {step.status}
+        </p>
+        <p className="text-sm text-gray-500">{step.description}</p>
+      </div>
+    </div>
+  ))}
+</div>
+
+
       </div>
 
       
@@ -89,6 +129,8 @@ const Track = () => {
 
 
       </div>
+
+
 
       
 
