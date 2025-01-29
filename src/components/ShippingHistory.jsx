@@ -42,7 +42,7 @@ const ShippingHistory = () => {
             <div className='w-full flex-col flex gap-2'>
               <header className='w-full flex items-center gap-4 justify-between'>
                 <span className='flex items-center flex-row gap-2'>
-                  <h2 className='text-[#21252C] text-base font-semibold'>{detail.id}</h2>
+                  <h2 className='text-[#21252C] text-base font-semibold'>{detail.trackingId}</h2>
                   <span className='bg-[#BABFC5] h-[4px] w-[4px] rounded-full block'></span>
                   <h4 className='text-[#BABFC5] font-normal text-sm'>{detail.date}</h4>
                 </span>
