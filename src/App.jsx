@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, BrowserRouter } from 'react-router-dom';
 import OnboardingScreen from './pages/Layouts/onboarding-layout/OnboardingScreen';
 import SignIn from './pages/Layouts/authentication-layout/SignIn';
 import Home from './pages/Layouts/AppLayout/Home';
@@ -9,6 +9,7 @@ import ChangePassword from './pages/Layouts/authentication-layout/ChangePassword
 import HomeLayout from './pages/Layouts/AppLayout/HomeLayout';
 import Track from './pages/Layouts/AppLayout/Track';
 import QRcodePage from './pages/Layouts/AppLayout/QRcodePage';
+import DynamicPage from './pages/Layouts/AppLayout/DynamicPage';
 
 const App = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
@@ -37,7 +38,7 @@ const App = () => {
   }
 
   return (
-    <Router>
+    <BrowserRouter>
       <Routes>
         {/* Main Onboarding Route */}
         <Route
@@ -61,8 +62,9 @@ const App = () => {
 
 {/* Auxillary pages */}
         <Route path="/Qrcode" element={<QRcodePage darkMode={darkMode}/> } />
+        <Route  path="/page/:pageId" element={<DynamicPage/>} />
       </Routes>
-    </Router>
+    </BrowserRouter>
   );
 };
 

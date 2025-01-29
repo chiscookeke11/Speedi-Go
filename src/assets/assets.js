@@ -24,6 +24,7 @@ export const icons = [{
 
   export const shippingDetails = [
     {
+      id: "1",
       trackingId: "#5R9G87R",
       date: "14 may 2023",
       from: "1234 Elm Street Springfield, IL 62701",
@@ -31,6 +32,7 @@ export const icons = [{
       status: "Delivered"
     },
     {
+      id:"2",
       trackingId: "#8T9G88P",
       date: "14 may 2023",
       from: "1234 Elm Street Springfield, IL 62701",
@@ -38,6 +40,7 @@ export const icons = [{
       status: "Cancelled"
     },
     {
+      id: "3",
       trackingId: "#6G9G87R",
       date: "14 may 2023",
       from: "1234 Elm Street Springfield, IL 62701",

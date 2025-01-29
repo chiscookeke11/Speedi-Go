@@ -28,7 +28,7 @@ const HomeLayout = () => {
     
     
     
-          <nav className='w-full px-8 py-6 bg-[#21252C] fixed bottom-0 left-0 flex flex-row items-center justify-between gap-3 text-[#76889A]  text-sm font-normal   ' >
+          <nav className='w-full px-8 py-3 bg-[#21252C] fixed bottom-0 left-0 flex flex-row items-center justify-between gap-3 text-[#76889A]  text-sm font-normal   ' >
     
             <NavLink to="/home-layout"  end className={({isActive}) => isActive? "text-white" : "" }  > <button className=' flex items-center gap-1 justify-center flex-col border-none outline-none text-center ' >
                 <FaHome/>

@@ -52,7 +52,7 @@ const Home = () => {
             <div className='w-full flex flex-row items-center overflow-x-auto mt-8 px-6 gap-8 py-3 ' >
 
               {services.map((service, index) => (
-                <button className='flex items-center justify-center flex-col gap-3  border-none outline-none ' >
+                < button key={index} className='flex items-center justify-center flex-col gap-3  border-none outline-none ' >
                   <div className='w-[72px] h-[72px] bg-[#F1F2F6] rounded-2xl flex items-center justify-center ' >
                     <img src={service.image} alt="" />
                   </div>
