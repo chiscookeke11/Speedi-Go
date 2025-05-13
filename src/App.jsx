@@ -67,7 +67,7 @@ const App = () => {
 
 {/* Auxillary pages */}
         <Route path="/Qrcode" element={<QRcodePage darkMode={darkMode}/> } />
-        <Route  path="/page/:pageId" element={<DynamicPage/>} />
+        <Route  path="/page/:id" element={<DynamicPage/>} />
       </Routes>
     </BrowserRouter>
   );

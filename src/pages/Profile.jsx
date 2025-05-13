@@ -20,6 +20,8 @@ const Profile = () => {
       return;
     }
 
+
+
     const fetchProfile = async () => {
       const { data, error } = await supabase
         .from('profiles')
