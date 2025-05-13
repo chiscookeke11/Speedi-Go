@@ -4,6 +4,7 @@ import { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import { UserAuth } from "../../../context/AuthContext";
+import Spinner from "../../../components/Spinner";
 
 const SignUp = ({ darkMode }) => {
   const navigate = useNavigate();
@@ -192,7 +193,7 @@ const SignUp = ({ darkMode }) => {
             darkMode ? "bg-[#D7E0EE] text-[#21252C]" : "bg-[#21252C] text-white"
           } ${loading ? "opacity-50 cursor-not-allowed" : ""}`}
         >
-          {loading ? "Signing Up..." : "Sign Up"}
+          {loading ? <Spinner/> : "Sign Up"}
         </button>
       </form>
 

@@ -1,7 +1,7 @@
 export const icons = [{
     notificationBell: "https://res.cloudinary.com/dwedz2laa/image/upload/v1737113146/notifications_vffj72.svg",
   }];
-  
+
 
   export const services = [
     {
@@ -22,32 +22,33 @@ export const icons = [{
     }
   ];
 
-  export const shippingDetails = [
-    {
-      id: "1",
-      trackingId: "#5R9G87R",
-      date: "14 may 2023",
-      from: "1234 Elm Street Springfield, IL 62701",
-      to: "5678 Maple Avenue Seattle, WA 98101",
-      status: "Delivered"
-    },
-    {
-      id:"2",
-      trackingId: "#8T9G88P",
-      date: "14 may 2023",
-      from: "1234 Elm Street Springfield, IL 62701",
-      to: "5678 Maple Avenue Seattle, WA 98101",
-      status: "Cancelled"
-    },
-    {
-      id: "3",
-      trackingId: "#6G9G87R",
-      date: "14 may 2023",
-      from: "1234 Elm Street Springfield, IL 62701",
-      to: "5678 Maple Avenue Seattle, WA 98101",
-      status: "Failed"
-    }
-  ];
+export const shippingDetails = [
+  {
+    id: "1",
+    trackingId: "#5R9G87R",
+    date: "14 May 2023",
+    from: "1234 Elm Street Springfield, IL 62701",
+    to: "7890 Pine Street, Denver, CO 80202",
+    status: "Delivered"
+  },
+  {
+    id: "2",
+    trackingId: "#8T9G88P",
+    date: "14 May 2023",
+    from: "1234 Elm Street Springfield, IL 62701",
+    to: "3456 Oak Street, San Francisco, CA 94102",
+    status: "Delivered"
+  },
+  {
+    id: "3",
+    trackingId: "#6G9G87R",
+    date: "14 May 2023",
+    from: "1234 Elm Street Springfield, IL 62701",
+    to: "1234 Birch Road, Austin, TX 73301",
+    status: "Delivered"
+  }
+];
+
 
   export const steps = [
     {
@@ -81,5 +82,4 @@ export const icons = [{
       completed: true,
     },
   ];
-  
-  
+

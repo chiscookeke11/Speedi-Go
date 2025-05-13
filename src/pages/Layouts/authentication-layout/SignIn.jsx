@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { FaApple, FaEye, FaEyeSlash } from 'react-icons/fa';
 import { Link, useNavigate } from 'react-router-dom';
 import { UserAuth } from '../../../context/AuthContext';
+import Spinner from '../../../components/Spinner';
 
 const SignIn = ({ darkMode }) => {
   const navigate = useNavigate();
@@ -110,7 +111,7 @@ const handleSubmit = async (event) => {
         </p>
 
         <button type="submit" disabled={isLoading} className={`w-full p-4 text-base font-semibold rounded-[8px] my-4 ${darkMode ? 'text-[#21252C] bg-[#D7E0EE]' : 'text-white bg-[#21252C]'}`}>
-   {isLoading ? 'Signing In...' : 'Sign In'}
+   {isLoading ? <Spinner/> : 'Sign In'}
         </button>
 
         <p className="text-[#F33D3D] text-sm font-normal">{formErrorMessage}</p>
