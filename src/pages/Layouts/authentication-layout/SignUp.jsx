@@ -44,6 +44,9 @@ const SignUp = ({ darkMode }) => {
     setShowPassword((prev) => !prev);
   };
 
+
+
+//   sign up function
   const handleSignUp = async (e) => {
     e.preventDefault();
 

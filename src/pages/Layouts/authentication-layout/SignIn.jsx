@@ -6,6 +6,8 @@ import { UserAuth } from '../../../context/AuthContext';
 const SignIn = ({ darkMode }) => {
   const navigate = useNavigate();
   const { signInUser } = UserAuth();
+  const [isLoading, setIsLoading] = useState(false);
+
 
   const [formData, setFormData] = useState({
     email: '',
@@ -40,22 +42,27 @@ const SignIn = ({ darkMode }) => {
     setShowPassword((prevShowPassword) => !prevShowPassword);
   };
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    setFormErrorMessage('');
 
-    try {
-      const result = await signInUser(formData.email, formData.password);
+const handleSubmit = async (event) => {
+  event.preventDefault();
+  setFormErrorMessage('');
+  setIsLoading(true);
 
-      if (result.success) {
-        navigate('/home-layout');
-      } else {
-        setFormErrorMessage(result.message || 'Invalid email or password');
-      }
-    } catch (error) {
-      setFormErrorMessage('Unexpected error. Please try again.');
+  try {
+    const result = await signInUser(formData.email, formData.password);
+
+    if (result.success) {
+      navigate('/home-layout');
+    } else {
+      setFormErrorMessage(result.message || 'Invalid email or password');
     }
-  };
+  } catch (error) {
+    setFormErrorMessage('Unexpected error. Please try again.');
+  } finally {
+    setIsLoading(false);
+  }
+};
+
 
   return (
     <div className={`w-full min-h-screen flex flex-col items-center justify-center px-4 py-4 gap-5 text-center ${darkMode ? 'bg-[#141924]' : 'bg-white'} sign-in`}>
@@ -102,8 +109,8 @@ const SignIn = ({ darkMode }) => {
           Forgot password?
         </p>
 
-        <button type="submit" className={`w-full p-4 text-base font-semibold rounded-[8px] my-4 ${darkMode ? 'text-[#21252C] bg-[#D7E0EE]' : 'text-white bg-[#21252C]'}`}>
-          Sign In
+        <button type="submit" disabled={isLoading} className={`w-full p-4 text-base font-semibold rounded-[8px] my-4 ${darkMode ? 'text-[#21252C] bg-[#D7E0EE]' : 'text-white bg-[#21252C]'}`}>
+   {isLoading ? 'Signing In...' : 'Sign In'}
         </button>
 
         <p className="text-[#F33D3D] text-sm font-normal">{formErrorMessage}</p>
@@ -117,10 +124,10 @@ const SignIn = ({ darkMode }) => {
         </p>
       </Link>
 
-      <p className="text-[#76889A] text-sm font-normal">Or Sign in with</p>
+      {/* <p className="text-[#76889A] text-sm font-normal">Or Sign in with</p> */}
 
       {/* Social sign-in buttons */}
-      <div className="w-full flex flex-row items-center justify-evenly gap-5">
+      {/* <div className="w-full flex flex-row items-center justify-evenly gap-5">
         <button className={`w-1/2 flex items-center justify-center p-4 rounded-2xl gap-3 ${darkMode ? 'bg-[#2B303A] text-[#EFF1F4]' : 'border border-[#CFD5DB]'}`}>
           <img src="https://res.cloudinary.com/dwedz2laa/image/upload/v1736695565/Google_ky0mgu.svg" alt="google logo" />
           Google
@@ -133,7 +140,7 @@ const SignIn = ({ darkMode }) => {
           )}
           Apple
         </button>
-      </div>
+      </div> */}
     </div>
   );
 };
