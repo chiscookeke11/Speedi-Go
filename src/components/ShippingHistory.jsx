@@ -27,7 +27,7 @@ const ShippingHistory = () => {
         };
 
         return (
-         <Link to={`/page/${detail.id}`}> <div
+         <Link key={detail} to={`/page/${detail.id}`}> <div
             key={detail.id}
             className='w-full flex items-start gap-2 my-6 border-b border-[#F1F2F6] py-3 px-6'
           >
@@ -36,7 +36,7 @@ const ShippingHistory = () => {
               <img src={deliveryImg()} alt="delivery-status" />
             </span>
 
-            
+
 
             {/* Details Section */}
             <div className='w-full flex-col flex gap-2'>

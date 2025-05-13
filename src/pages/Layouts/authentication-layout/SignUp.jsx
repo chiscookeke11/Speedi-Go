@@ -202,7 +202,7 @@ const SignUp = ({ darkMode }) => {
         </p>
       </Link>
 
-      <p className="text-[#76889A] text-sm font-normal">Or sign up with</p>
+
     </div>
   );
 };

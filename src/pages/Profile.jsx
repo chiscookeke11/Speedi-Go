@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { UserAuth } from '../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
+import ProfileForm from '../components/ProfileForm';
 
 const Profile = () => {
   const { signOut, session } = UserAuth();
@@ -22,6 +23,7 @@ const Profile = () => {
       <h1>Profile Page</h1>
       <h2>Welcome, {user?.user_metadata?.name || "User"}!</h2>
       <button onClick={signOut}>Sign Out</button>
+      <ProfileForm/>
     </div>
   );
 };
