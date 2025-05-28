@@ -68,7 +68,7 @@ const Profile = () => {
                 />
               )}
               <p><strong>Full Name:</strong> {profile.full_name}</p>
-              <p><strong>Phone:</strong> {profile.phone_number}</p>
+              {/* <p><strong>Phone:</strong> {profile.phone_number}</p> */}
               <p><strong>Address:</strong> {profile.address}</p>
               <p><strong>City:</strong> {profile.city}</p>
               <p><strong>State:</strong> {profile.state}</p>
