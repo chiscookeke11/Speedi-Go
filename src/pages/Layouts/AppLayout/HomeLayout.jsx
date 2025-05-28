@@ -46,7 +46,7 @@ const HomeLayout = () => {
             </button>
             </NavLink>
 
-           <NavLink to="/home-layout/track" className={({isActive}) => isActive? "text-white" : "" }   > <button className=' flex gap-1 items-center justify-center flex-col border-none outline-none text-center'>
+           <NavLink to="#" className={({isActive}) => isActive? "text-white" : "" }   > <button className=' flex gap-1 items-center justify-center flex-col border-none outline-none text-center'>
                 <FaMapMarkedAlt />
                 Track
             </button>

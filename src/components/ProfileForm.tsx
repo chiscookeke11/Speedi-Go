@@ -5,7 +5,7 @@ import { getNames } from 'country-list';
 const ProfileForm = () => {
   const [profile, setProfile] = useState({
     full_name: '',
-    phone_number: '',
+    phone_number: '00000000000',
     address: '',
     city: '',
     state: '',
@@ -129,7 +129,7 @@ const ProfileForm = () => {
               required
             />
 
-            <input
+            {/* <input
               type="text"
               name="phone_number"
               placeholder="Phone Number"
@@ -137,7 +137,7 @@ const ProfileForm = () => {
               onChange={handleChange}
               className="w-full px-3 py-2 border rounded"
               required
-            />
+            /> */}
 
             <input
               type="text"
