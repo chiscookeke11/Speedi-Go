@@ -12,6 +12,7 @@ import QRcodePage from './pages/Layouts/AppLayout/QRcodePage';
 import DynamicPage from './pages/Layouts/AppLayout/DynamicPage';
 import SignUp from './pages/Layouts/authentication-layout/SignUp';
 import Profile from './pages/Profile';
+import { Toaster } from 'sonner';
 
 const App = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
@@ -69,6 +70,7 @@ const App = () => {
         <Route path="/Qrcode" element={<QRcodePage darkMode={darkMode}/> } />
         <Route  path="/page/:id" element={<DynamicPage/>} />
       </Routes>
+        <Toaster />
     </BrowserRouter>
   );
 };

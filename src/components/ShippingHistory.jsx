@@ -19,7 +19,7 @@ const ShippingHistory = () => {
       const { data, error } = await supabase
         .from('orders')
         .select('*')
-        .eq('id', user.id); // ✅ Use correct column
+        .eq('user_id', user.id); // ✅ Use correct column
       if (error) {
         console.log('error fetching history data', error);
       } else {
@@ -52,7 +52,7 @@ const ShippingHistory = () => {
   if (!shippingDetails.length) return <p>No shipping history found</p>;
 
   return (
-    <div className="my-1 border-t border-[#F1F2F6] py-4 h-auto">
+    <div className="my-1 border-t border-[#F1F2F6] py-4 h-auto pb-[50px]">
       {shippingDetails.map((detail) => {
         const bg = () => {
           if (detail.status === 'Delivered') return 'bg-[#E9FFE5] text-[#29BE10]';
@@ -99,7 +99,8 @@ const ShippingHistory = () => {
                       <h2 className="text-[#76889A] font-normal text-sm">{profile?.address}</h2>
                     </div>
                     <div>
-                      <h2 className="text-[#BABFC5] font-normal text-sm">To</h2>
+                      <h2 className="text-[#BABFC5] font-normal text-sm">To:</h2>
+                      <h2 className="text-[#BABFC5] font-normal text-sm">{detail.Reciepient} </h2>
                       <h2 className="text-[#76889A] font-normal text-sm">{detail.delivery_address}</h2>
                     </div>
                   </div>

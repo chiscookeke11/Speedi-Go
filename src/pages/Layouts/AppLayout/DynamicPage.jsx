@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import  { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import QRCode from 'react-qr-code';
+
 import { FaCopy } from 'react-icons/fa';
 import { supabase } from '../../../utils/supabaseClient';
-import MapComponent from '../../../components/MapComponent';
+import { toast } from 'sonner';
+// import MapComponent from '../../../components/MapComponent';
 
 const DynamicPage = () => {
   const { id } = useParams();
@@ -39,10 +40,10 @@ const DynamicPage = () => {
     if (shipment?.tracking_id) {
       navigator.clipboard
         .writeText(shipment.tracking_id)
-        .then(() => setCopiedModal(true))
+        .then(() => toast.success("Copied!"))
         .catch((err) => {
           console.error("Failed to copy tracking ID:", err);
-          alert("Failed to copy tracking ID");
+          toast.error("Failed to copy tracking ID");
         });
     }
   };
@@ -51,7 +52,7 @@ const DynamicPage = () => {
     return <div className="text-white p-10">Loading shipment details...</div>;
   }
 
-  const trackingUrl = `${window.location.origin}/page/${shipment.id}`;
+  // const trackingUrl = `${window.location.origin}/page/${shipment.id}`;
 
   return (
     <div className='w-full min-h-screen bg-[#21252C]'>
@@ -108,8 +109,10 @@ const DynamicPage = () => {
           <p className="text-[#21252C] mb-2">Destination: <strong>{shipment.delivery_address || 'N/A'}</strong></p>
         </div>
 
-        <div className="mt-6 bg-red-500 mx-auto w-[95%] h-[300px] flex items-center justify-center overflow-hidden ">
-               <MapComponent />
+        <div className="mt-6  mx-auto w-[95%] h-[300px] flex flex-col items-center justify-center overflow-hidden ">
+   <p className='text-base font-bold ' >       Map</p>
+               {/* <MapComponent /> */}
+               <div className='w-8 h-8 rounded-full mx-auto my-auto border-[2px] border-b-0 border-blue-600 animate-spin ' ></div>
         </div>
       </div>
 

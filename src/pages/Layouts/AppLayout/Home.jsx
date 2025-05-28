@@ -5,7 +5,7 @@ import { MdFilterList } from 'react-icons/md';
 import ShippingHistory from '../../../components/ShippingHistory';
 
 const Home = () => {
-  
+
   const [newMessage, setNewMessage] = useState(["hello", "hello", "hello"]);
 
     return (
@@ -65,13 +65,13 @@ const Home = () => {
 
 
 
-          <div className="history-wrapper  mt-6 pt-3 py-2"> 
+          <div className="history-wrapper  mt-6 pt-3 py-2">
               <h1 className='px-5 text-[#21252C] text-lg font-bold w-full flex flex-row justify-between ' > <span>Shipping History</span>     <button> <MdFilterList/> </button></h1>
 
 <ShippingHistory/>
-        
 
-            
+
+
 
           </div>
 
